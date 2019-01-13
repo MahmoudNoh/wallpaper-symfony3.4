@@ -1,0 +1,36 @@
+{%  extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <h2>Top Wallpapers For Abstract</h2>
+        {%  include "home/best-in-category.html.twig" with {'images' : abstract} %}
+    </div>
+
+    <div class="row">
+        <h2>Top Wallpapers For Summer</h2>
+        {%  include "home/best-in-category.html.twig" with {'images' : summer} %}
+    </div>
+
+
+    <div class="row">
+        <h2>Top Wallpapers For Winter</h2>
+        {%  include "home/best-in-category.html.twig" with {'images' : winter} %}
+    </div>
+
+
+
+    <div class="row">
+        <h2>Random Images</h2>
+        <div class="row">
+            {% for image in radomImages %}
+                <div class="col-md-3  col-sm-6">
+                    <div class="thumbnail">
+                        <img src="images/{{ image }}" class="img-thumbnail" alt="..."  >
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{%  endblock %}
